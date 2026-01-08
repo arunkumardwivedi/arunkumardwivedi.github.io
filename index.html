@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dr. Arun Kumar Dwivedi | Meteorological Researcher</title>
-  <meta name="description" content="Dr. Arun Kumar Dwivedi – Meteorological Researcher bridging research and industry. Numerical weather modeling, atmospheric data analysis, and applied meteorology." />
+  <meta name="description" content="Dr. Arun Kumar Dwivedi – Meteorological Researcher bridging research and industry. Numerical weather modeling, atmospheric data compression, AI/ML in meteorology, and HPC I/O optimization." />
 
   <style>
     :root{
@@ -16,33 +16,30 @@
       --accent2:#06b6d4;
       --border:#e5e7eb;
       --radius:18px;
-      --max:1100px;
+      --max:1120px;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --shadow: 0 12px 34px rgba(15,23,42,.08);
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:var(--sans);
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
 
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
 
-    .wrap{max-width:var(--max); margin:auto; padding:24px 18px 60px}
-
-    /* Top bar */
     .topbar{
-      position:sticky;
-      top:0;
+      position:sticky; top:0; z-index:20;
       background:#ffffffee;
-      backdrop-filter:blur(6px);
+      backdrop-filter: blur(8px);
       border-bottom:1px solid var(--border);
-      z-index:10;
     }
     .topbar-inner{
       max-width:var(--max);
@@ -57,56 +54,69 @@
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:700;
+      font-weight:800;
+      letter-spacing:.1px;
+      color:var(--text);
     }
     .dot{
-      width:12px;height:12px;border-radius:50%;
+      width:12px;height:12px;border-radius:999px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 4px rgba(37,99,235,.10);
+    }
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
     nav a{
-      margin-left:12px;
       font-size:14px;
       color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
     }
-    nav a:hover{color:var(--text)}
+    nav a:hover{
+      color:var(--text);
+      border-color:var(--border);
+      background:#f8fafc;
+      text-decoration:none;
+    }
 
-    /* Cards */
+    .wrap{max-width:var(--max); margin:auto; padding:22px 18px 70px}
+
     .card{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:22px;
-      box-shadow:0 10px 30px rgba(15,23,42,.08);
     }
 
-    /* Hero */
     .hero{
       display:grid;
-      grid-template-columns:1.3fr .7fr;
+      grid-template-columns:1.35fr .65fr;
       gap:18px;
-      margin-top:22px;
+      margin-top:18px;
     }
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
-
-    h1{
-      font-size:42px;
-      line-height:1.1;
-      margin:14px 0 10px;
-    }
-    @media(max-width:520px){h1{font-size:32px}}
+    @media(max-width:950px){.hero{grid-template-columns:1fr}}
 
     .kicker{
       font-family:var(--mono);
       font-size:12px;
       color:var(--accent);
+      letter-spacing:.2px;
     }
-
-    .subtitle{
-      color:var(--muted);
-      margin-bottom:16px;
+    h1{
+      font-size:42px;
+      line-height:1.12;
+      margin:12px 0 10px;
     }
+    @media(max-width:520px){h1{font-size:32px}}
 
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .subtitle{color:var(--muted); margin:0 0 14px}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     .tag{
       font-size:13px;
       padding:6px 10px;
@@ -121,9 +131,13 @@
       padding:10px 14px;
       border-radius:12px;
       border:1px solid var(--border);
-      font-weight:600;
+      font-weight:700;
       font-size:14px;
       background:#fff;
+      color:var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -131,21 +145,28 @@
       border:none;
     }
 
-    /* Grid sections */
+    .mini{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .kv p{margin:8px 0}
+    .kv b{color:var(--text)}
+    .kv .muted{color:var(--muted)}
+
     .grid{
       display:grid;
       grid-template-columns:repeat(12,1fr);
       gap:18px;
-      margin-top:20px;
+      margin-top:18px;
     }
     .col6{grid-column:span 6}
     .col12{grid-column:span 12}
-    @media(max-width:900px){.col6{grid-column:span 12}}
+    @media(max-width:950px){.col6{grid-column:span 12}}
 
-    h2{
-      font-size:18px;
-      margin:0 0 12px;
-    }
+    h2{font-size:18px;margin:0 0 12px}
+    .section-note{margin:-6px 0 12px;color:var(--muted);font-size:13px}
 
     .item{
       border:1px solid var(--border);
@@ -154,11 +175,16 @@
       margin-top:10px;
       background:#fafafa;
     }
-
+    .item .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      flex-wrap:wrap;
+      gap:10px;
+    }
     .item b{font-size:15px}
     .meta{font-size:13px;color:var(--muted)}
-
-    ul{margin:8px 0 0 18px}
+    ul{margin:10px 0 0 18px}
     li{margin:6px 0}
 
     .pillrow{display:flex;flex-wrap:wrap;gap:8px}
@@ -168,19 +194,39 @@
       border-radius:999px;
       background:#f1f5f9;
       border:1px solid var(--border);
+      color:#0f172a;
     }
 
+    details{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      padding:12px 14px;
+      margin-top:10px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight:800;
+      color:var(--text);
+      list-style:none;
+    }
+    details summary::-webkit-details-marker{display:none}
     .footer{
       text-align:center;
-      margin-top:30px;
+      margin-top:28px;
       font-size:13px;
       color:var(--muted);
+    }
+    .hr{
+      height:1px;
+      background:var(--border);
+      margin:18px 0;
+      border:0;
     }
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
@@ -190,9 +236,13 @@
       <nav>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#patent">Patent</a>
         <a href="#publications">Publications</a>
-        <a href="#skills">Skills</a>
+        <a href="#skills">Technical</a>
+        <a href="#training">Training</a>
+        <a href="#awards">Awards</a>
+        <a href="#languages">Languages</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -206,96 +256,257 @@
         <div class="kicker">Meteorological Researcher · Research & Industry</div>
         <h1>Dr. Arun Kumar Dwivedi</h1>
         <p class="subtitle">
-          Mid-level meteorological researcher bridging scientific research and
-          operational industry applications, with experience in numerical
-          weather modeling, atmospheric data analysis, and applied meteorology.
+          Scientific employee and applied meteorology/HPC practitioner focused on
+          <b>Numerical Weather Modeling</b>, <b>Atmospheric Data Compression</b>,
+          <b>AI/ML Applications in Meteorology</b>, and <b>HPC I/O Optimization</b>.
         </p>
 
         <div class="tags">
-          <span class="tag">Numerical Weather Prediction</span>
-          <span class="tag">Atmospheric Data Analysis</span>
-          <span class="tag">Forecast Verification</span>
-          <span class="tag">Research → Operations</span>
+          <span class="tag">MPAS-A</span>
+          <span class="tag">WRF</span>
+          <span class="tag">HPC I/O</span>
+          <span class="tag">AI/ML Compression</span>
+          <span class="tag">Satellite & In-situ Data</span>
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="#contact">Contact</a>
-          <a class="btn" href="#">LinkedIn</a>
-          <a class="btn" href="#">Google Scholar</a>
-          <a class="btn" href="#">GitHub</a>
+          <a class="btn primary" href="#contact">✉ Contact</a>
+          <!-- Add your real links below -->
+          <a class="btn" href="#" target="_blank" rel="noreferrer">in LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">🎓 Google Scholar</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">💻 GitHub</a>
+        </div>
+
+        <div class="mini">
+          Tip: Add this link to your CV: <b>https://arunkumardwivedi.github.io</b>
         </div>
       </div>
 
-      <div class="card">
-        <h2>Quick Info</h2>
-        <p><b>Role:</b> Meteorological Researcher</p>
-        <p><b>Focus:</b> Research & Industry</p>
-        <p><b>Level:</b> Mid-level</p>
-        <p><b>Location:</b> India</p>
-      </div>
+      <aside class="card kv">
+        <h2 style="margin-bottom:10px;">Quick Info</h2>
+        <p><span class="muted">Current role:</span> <b>Scientific Employee</b></p>
+        <p><span class="muted">Institution:</span> <b>University of Hohenheim, Stuttgart (Germany)</b></p>
+        <p><span class="muted">Location:</span> <b>Stuttgart, Germany</b></p>
+        <p><span class="muted">Email:</span> <b><a href="mailto:arunkumar.dwivedi@uni-hohenheim.de">arunkumar.dwivedi@uni-hohenheim.de</a></b></p>
+        <p><span class="muted">Alt email:</span> <b><a href="mailto:dwivedi.arunkumar@gmail.com">dwivedi.arunkumar@gmail.com</a></b></p>
+      </aside>
     </section>
 
-    <!-- CONTENT -->
+    <!-- ABOUT -->
     <section class="grid">
       <div id="about" class="card col12">
         <h2>About</h2>
         <p>
-          I work at the intersection of meteorological research and industry,
-          translating scientific methods into reliable operational workflows.
-          My interests include numerical weather modeling, atmospheric data
-          compression, high-performance computing, and AI/ML applications in
-          meteorology.
+          I work at the intersection of meteorological research and industry, translating scientific
+          methods into reliable operational workflows. My core interests are Numerical Weather Modeling,
+          Atmospheric Data Compression, AI/ML applications in meteorology, and HPC I/O optimization.
+        </p>
+        <p class="section-note">
+          Address: Im Asemwald 62, Plieningen, Stuttgart – 70599, Germany · Mobile: +49 160 95091044
         </p>
       </div>
 
-      <div id="experience" class="card col6">
-        <h2>Experience</h2>
+      <!-- EXPERIENCE -->
+      <div id="experience" class="card col12">
+        <h2>Professional Experience</h2>
+
         <div class="item">
-          <b>Meteorological Researcher</b>
-          <div class="meta">Research & Industry · YYYY – Present</div>
+          <div class="top">
+            <b>Scientific Employee — University of Hohenheim, Stuttgart, Germany</b>
+            <span class="meta">Apr 2023 – Present</span>
+          </div>
           <ul>
-            <li>Worked on numerical weather modeling and forecasting systems.</li>
-            <li>Developed data-driven methods for atmospheric analysis.</li>
-            <li>Collaborated with research and operational teams.</li>
+            <li>PI of the GCS Preparatory Access Project for compute time.</li>
+            <li>Configuration and running <b>MPAS-A</b> (3 km grid) model on the <b>Hawk</b> supercomputer.</li>
+            <li>HPC I/O optimization of MPAS-A model using various tools; understanding MPAS-A I/O module.</li>
+            <li>Handling large (TBs) spatio-temporal datasets.</li>
+            <li>AI/ML compression of MPAS-A model output data (unstructured grid).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <b>Project Engineer — Centre for Development of Advanced Computing (C-DAC), Pune, India</b>
+            <span class="meta">Aug 2015 – Mar 2023</span>
+          </div>
+          <ul>
+            <li>Developed a compression technique for atmospheric data (received US patent).</li>
+            <li>Automated WRF model workflow (data downloading → visualization) for operational forecasts.</li>
+            <li>Ingested customized LULC data into WRF; automated data assimilation (3DVAR) into WRF.</li>
+            <li>Automated meteorological data processing and visualization; extraction and format conversion across datasets.</li>
+            <li>Designed and developed a datahub module to receive, process, and store various datasets.</li>
+            <li>Processed and analyzed in-situ and satellite meteorological data; designed/verified tools/portals for collaborative projects.</li>
+            <li>Applied AI/ML techniques to forecast temperature & rainfall; prepared proposals and coordinated with collaborators.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <b>Junior Research Fellow — Birla Institute of Technology, Mesra, Ranchi, India</b>
+            <span class="meta">Jan 2012 – Jun 2014</span>
+          </div>
+          <ul>
+            <li>Managed operations of a surface observatory and automated instruments.</li>
+            <li>Monitoring, measurement, and analysis of meteorological data from instruments.</li>
+            <li>Atmospheric boundary layer analysis using eddy covariance method.</li>
+            <li>Developed an ANN model for lightning forecast using electric field mill data.</li>
+            <li>Lightning nowcasting based on field mill data using fuzzy logic.</li>
           </ul>
         </div>
       </div>
 
-      <div id="projects" class="card col6">
-        <h2>Selected Projects</h2>
+      <!-- EDUCATION -->
+      <div id="education" class="card col6">
+        <h2>Educational Qualifications</h2>
         <div class="item">
-          <b>Atmospheric Data Compression</b>
-          <ul>
-            <li>Developed efficient compression techniques for large meteorological datasets.</li>
-          </ul>
+          <b>Ph.D. (Technology)</b>
+          <div class="meta">Birla Institute of Technology, Mesra, Ranchi, India — 2016</div>
+        </div>
+        <div class="item">
+          <b>M.Sc. (Electronics) — 73.66%</b>
+          <div class="meta">UIET, C.S.J.M. University Campus, Kanpur, India — 2008</div>
+        </div>
+        <div class="item">
+          <b>B.Sc. (Physics, Mathematics) — 61.40%</b>
+          <div class="meta">Bundelkhand University, Jhansi, India — 2006</div>
         </div>
       </div>
 
-      <div id="publications" class="card col6">
+      <!-- PATENT -->
+      <div id="patent" class="card col6">
+        <h2>Patent</h2>
+        <div class="item">
+          <b>Near lossless compression of atmospheric data</b>
+          <div class="meta">
+            Arun Kumar Dwivedi, Prateek Maheshwari, Sahidul Islam, Neelesh Kharkar, Akshara Kaginalkar (2022)
+          </div>
+          <div class="meta">U.S. Patent No. 11341098 — U.S. Patent and Trademark Office</div>
+        </div>
+      </div>
+
+      <!-- TECHNICAL / COMPUTER -->
+      <div id="skills" class="card col12">
+        <h2>Technical & Computer Skills</h2>
+
+        <details open>
+          <summary>Computer / HPC / Modeling</summary>
+          <div class="hr"></div>
+          <div class="pillrow">
+            <span class="pill"><b>Operating Systems:</b> Linux, Windows</span>
+            <span class="pill"><b>Numerical Models:</b> WRF, MPAS-A</span>
+            <span class="pill"><b>Workload Managers:</b> SLURM, PBS</span>
+            <span class="pill"><b>I/O Tools:</b> Darshan, Mpip</span>
+            <span class="pill"><b>Programming:</b> Python, Bash, Fortran</span>
+            <span class="pill"><b>Data Formats:</b> NetCDF, HDF, GRIB, ASCII, GeoTIFF</span>
+            <span class="pill"><b>Visualization:</b> NCL, Vapor, IDV, QGIS, Ncview, Panoply</span>
+            <span class="pill"><b>Packages:</b> Wgrib2, CDO, Ncks</span>
+            <span class="pill"><b>Project Tools:</b> SVN, JIRA</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Instruments Handling</summary>
+          <div class="hr"></div>
+          <div class="pillrow">
+            <span class="pill">Electric Field Meter</span>
+            <span class="pill">Automatic Weather Station (AWS)</span>
+            <span class="pill">GPS Radiosonde</span>
+            <span class="pill">SODAR</span>
+            <span class="pill">Ultrasonic Anemometer</span>
+          </div>
+        </details>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div id="publications" class="card col12">
         <h2>Publications</h2>
-        <div class="item">
-          <b>Selected Peer-Reviewed Publications</b>
-          <div class="meta">See Google Scholar for full list</div>
-        </div>
+        <p class="section-note">Journals and conferences listed as in the CV (DOI links included where provided).</p>
+
+        <details open>
+          <summary>Journal Articles</summary>
+          <div class="hr"></div>
+
+          <ol>
+            <li>Upadhyay, P. K., Dwivedi, A. K., Kumar, R. (2025). <i>Lightning Forecasting in Pre-Monsoon Season Using Non-Linear Autoregressive Artificial Neural Network</i>, Pure and Applied Geophysics, 182(4):1783. <a href="https://doi.org/10.1007/s00024-024-03654-2" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Valappil, V. K., Kedia, S., Dwivedi, A. K., et al. (2023). <i>Assessing the performance of WRF ARW model in simulating heavy rainfall events over the Pune region: In support of operational applications</i>, Meteorology and Atmospheric Physics, 135, 16. <a href="https://doi.org/10.1007/s00703-023-00952-7" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Sriram, S., Dwivedi, A. K., et al. (2022). <i>DeepComp: A Hybrid Framework for Data Compression Using Attention Coupled Autoencoder</i>, Arabian Journal for Science and Engineering, 1–16. <a href="https://doi.org/10.1007/s13369-022-06587-x" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Kaginalkar, A., Ghude, S. D., Mohanty, U. C., Mujumdar, P., Bhakare, S., Darbari, H., Dwivedi, A. K., et al. (2021). <i>Integrated urban environmental system of systems for weather ready cities in India</i>, Bulletin of the American Meteorological Society. <a href="https://doi.org/10.1175/BAMS-D-20-0279.1" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Tinmaker, M. I. R., Ghude, S. D., Dwivedi, A. K., et al. (2022). <i>Relationships among lightning, rainfall, and meteorological parameters over oceanic and land regions of India</i>, Meteorology and Atmospheric Physics, 134, 5. <a href="https://doi.org/10.1007/s00703-021-00841-x" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Tinmaker, M. I. R., Jena, C. K., Ghude, S. D., Dwivedi, A. K., et al. (2021). <i>Relationship of lightning with different weather parameters during transition period of dry to wet season over Indian region</i>, Journal of Atmospheric and Solar-Terrestrial Physics, 220, 105673. <a href="https://doi.org/10.1016/j.jastp.2021.105673" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Tinmaker, M. I. R., Dwivedi, A. K., Islam, S., et al. (2021). <i>Lightning Activity Variability with Prevailing Weather Parameters and Aerosol Loading Over Dry and Wet Regions of India</i>, Pure and Applied Geophysics. <a href="https://doi.org/10.1007/s00024-021-02695-1" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Kedia, S., Bhakare, S. P., Dwivedi, A. K., Islam, S., Kaginalkar, A. (2021). <i>Estimates of change in surface meteorology and urban heat island over northwest India: Impact of urbanization</i>, Urban Climate, 36, 100782. <a href="https://doi.org/10.1016/j.uclim.2021.100782" target="_blank" rel="noreferrer">DOI</a></li>
+            <li>Dwivedi, A. K., Chandra, S., Kumar, M., Kumar, S., Kiran Kumar, N. V. P. (2015). <i>Spectral Analysis of Wind and Temperature Components during Lightning in Pre-Monsoon Season over Ranchi</i>, Meteorological & Atmospheric Physics, 127(1), 95–105.</li>
+            <li>Dwivedi, A. K., Chandra, S., Kumar, M., Kumar, S., Kiran Kumar, N. V. P. (2014). <i>Atmospheric Surface Layer Responses to the Extreme Lightning Day in Plateau Region in India</i>, Journal of Atmospheric and Solar-Terrestrial Physics, 120, 143–149.</li>
+            <li>Chandra, S., Dwivedi, A. K., Kumar, M. (2014). <i>Characterization of The Atmospheric Boundary Layer from Radiosonde Observations along Eastern End of Monsoon Trough of India</i>, Journal of Earth System Science, 123(6), 1233–1240.</li>
+            <li>Srivastava, A., Kumar, M., Dwivedi, A. K. (2012). <i>Studies of Atmospheric Parameters during SW Monsoon Period Associated with Severe Cyclone Aila and Lightning Occurrence over Ranchi Region</i>, ISRN Meteorology, 2012, Article ID 975790.</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>Conference Publications / Abstracts</summary>
+          <div class="hr"></div>
+          <ol>
+            <li>Kedia, S., Dwivedi, A. K., et al. (2023). <i>Impact of Land Use Information on Heavy Rainfall Event Forecast Using an Urban Scale Model</i>, 103rd AMS Annual Meeting.</li>
+            <li>Gavali, P., Gavhale, S., Niyaz, M., Islam, S., Pokale, S., Dwivedi, A., et al. (2023). <i>Integrated Reservoir Operations using coupled Hydro-Met Multi-Model system for flood forecasting and mitigations for Pune, India</i>, EGU General Assembly (EGU-15342).</li>
+            <li>Kadam, G. P., Niyaz, M., Gavali, P. G., Gavhale, S., Pentakota, L., Kedia, S., Islam, S., Dwivedi, A. K., et al. (2023). <i>Multi-Model Hydrology for Urban Flood Early Warning for Pune, India</i>, 103rd AMS Annual Meeting.</li>
+            <li>Niyogi, D., Niyaz, M., Gavhale, S., Dwivedi, A., et al. (2022). <i>Coupled Meteorology and Hydrology Modelling to Forecast Flood Extreme Events: Case Study of Pune, India</i>, AGU Fall Meeting Abstracts.</li>
+            <li>Dwivedi, A. K., Srivastava, A., Karan, B. M., Prakash, P., Kumar, M. (2011). <i>Fuzzy Logic Applied in the Study of Cloud to Ground Lightning Prediction</i>, 13th International Conference of Physical Sciences (IAPS), Dehradun.</li>
+            <li>Srivastava, A., Dwivedi, A. K., Kumar, M., Prakash, P. (2011). <i>Investigation on Lightning for Short Time Prediction</i>, 13th International Conference of Physical Sciences (IAPS), Dehradun.</li>
+            <li>Srivastava, A., Mishra, M., Kumar, M., Dwivedi, A. K., Prakash, P. (2010). <i>Markov Chain Method for Lightning during Pre-Monsoon and Monsoon Season over Ranchi</i>, CTCZ Initial Results, IITM Pune.</li>
+            <li>Kumar, M., Srivastava, A., Karan, B. M., Dwivedi, A. K. (2010). <i>Study of Electric Field during SW Monsoon Period Associated with Severe Cyclone AILA over Ranchi Region</i>, CTCZ Initial Results, IITM Pune.</li>
+          </ol>
+        </details>
       </div>
 
-      <div id="skills" class="card col6">
-        <h2>Skills</h2>
+      <!-- TRAINING -->
+      <div id="training" class="card col6">
+        <h2>Training Courses & Workshops</h2>
+        <ol>
+          <li>AI4Science Bootcamp (EuroCC2) — 27–28 May 2025</li>
+          <li>Parallel IO NHR Workshop (DKRZ, Hamburg) — 7–8 May 2024</li>
+          <li>Hybrid Programming in HPC – MPI + X (HLRS, Stuttgart) — 23–25 Jan 2024</li>
+          <li>AI SHIKSHA: Introduction to Machine Learning (C-DAC / NSM) — Feb–Mar 2021</li>
+          <li>FS PRIME Training in Artificial Intelligence for Government Officials — 01–21 Oct 2021</li>
+          <li>Atmospheric Boundary Layer coursework (NOBLE project, SPL/VSSC) — 12–30 Oct 2012</li>
+          <li>Observations and Data Analysis for STORM (CORAL, IIT Kharagpur) — 13–19 Apr 2011</li>
+        </ol>
+      </div>
+
+      <!-- AWARDS/MEMBERSHIP -->
+      <div id="awards" class="card col6">
+        <h2>Awards & Membership</h2>
+        <ol>
+          <li>Qualified UGC-NET (June 2013) — eligibility for lectureship in Electronics.</li>
+          <li>Life member — Indian Meteorological Society (Ranchi Chapter).</li>
+        </ol>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div id="languages" class="card col12">
+        <h2>Languages</h2>
         <div class="pillrow">
-          <span class="pill">NWP</span>
-          <span class="pill">Python</span>
-          <span class="pill">WRF</span>
-          <span class="pill">HPC</span>
-          <span class="pill">NetCDF / GRIB</span>
-          <span class="pill">Data Analysis</span>
+          <span class="pill"><b>Hindi</b> — Mother tongue</span>
+          <span class="pill"><b>English</b> — Fluent</span>
+          <span class="pill"><b>German</b> — A2 level</span>
         </div>
       </div>
 
+      <!-- CONTACT -->
       <div id="contact" class="card col12">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>LinkedIn: <a href="#">Add link</a></p>
-        <p>Google Scholar: <a href="#">Add link</a></p>
+        <p><b>Email (work):</b> <a href="mailto:arunkumar.dwivedi@uni-hohenheim.de">arunkumar.dwivedi@uni-hohenheim.de</a></p>
+        <p><b>Email (personal):</b> <a href="mailto:dwivedi.arunkumar@gmail.com">dwivedi.arunkumar@gmail.com</a></p>
+        <p><b>Mobile:</b> +49 160 95091044</p>
+        <p><b>Address:</b> Im Asemwald 62, Plieningen, Stuttgart – 70599, Germany</p>
+
+        <div class="hr"></div>
+        <p class="section-note"><b>Add your profile links here (recommended):</b></p>
+        <div class="pillrow">
+          <span class="pill">LinkedIn: edit the “#” link in the hero buttons</span>
+          <span class="pill">Google Scholar: paste your Scholar profile URL</span>
+          <span class="pill">GitHub: paste your GitHub profile URL</span>
+          <span class="pill">ORCID (optional)</span>
+        </div>
       </div>
     </section>
 
@@ -307,6 +518,5 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
