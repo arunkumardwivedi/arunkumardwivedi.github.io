@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Arun Kumar Dwivedi — Meteorological Researcher</title>
+  <meta name="description" content="Dr. Arun Kumar Dwivedi — Meteorological Researcher bridging research and industry. CV, experience, projects, publications, and contact." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --muted:#a9b4d0;
+      --text:#e9eeff;
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1050px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 5%, rgba(110,231,255,.18), transparent 60%),
+        radial-gradient(1000px 500px at 85% 15%, rgba(167,139,250,.18), transparent 60%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 55%, #070b14 100%);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      position:sticky; top:0; z-index:20;
+      padding:14px 0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,11,20,.92), rgba(7,11,20,.55));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 22px rgba(110,231,255,.25);
+    }
+    .brand b{letter-spacing:.2px}
+    nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    nav a{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
+    }
+    nav a:hover{color:var(--text); border-color:rgba(255,255,255,.16)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      margin-top:22px;
+    }
+    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:28px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-family: var(--mono);
+      font-size:12px; color: rgba(233,238,255,.85);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .kicker span{opacity:.8}
+    h1{
+      margin:16px 0 10px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){ h1{font-size:34px} }
+    .subtitle{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .tag{
+      font-size:13px; color:rgba(233,238,255,.85);
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+    }
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn.primary{
+      border-color: rgba(110,231,255,.35);
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.14));
+    }
+    .btn small{font-weight:500; color:var(--muted)}
+    .side{padding:22px}
+    .side h3{margin:4px 0 10px; font-size:16px}
+    .kv{
+      display:grid; grid-template-columns: 1fr;
+      gap:10px; margin-top:12px;
+    }
+    .kv .row{
+      display:flex; justify-content:space-between; gap:12px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.16);
+      font-size:14px;
+    }
+    .kv .row span{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+    .col6{grid-column: span 6}
+    .col12{grid-column: span 12}
+    @media (max-width: 880px){ .col6{grid-column: span 12} }
+    .section{padding:22px}
+    .section h2{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .section p{margin:0 0 12px; color:var(--muted)}
+    .list{display:flex; flex-direction:column; gap:12px; margin-top:10px}
+    .item{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.16);
+    }
+    .item .top{
+      display:flex; flex-wrap:wrap;
+      align-items:baseline; justify-content:space-between; gap:8px;
+    }
+    .item b{font-size:15px}
+    .meta{color:var(--muted); font-size:13px}
+    .bullets{margin:10px 0 0 18px; color:rgba(233,238,255,.82)}
+    .bullets li{margin:6px 0}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      font-size:12px; color:rgba(233,238,255,.86);
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .footer{
+      margin-top:22px;
+      color:rgba(233,238,255,.7);
+      font-size:13px;
+      text-align:center;
+      padding:18px 0 0;
+    }
+    .muted{color:var(--muted)}
+    .note{font-family:var(--mono); font-size:12px; color:rgba(233,238,255,.78)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="dot"></div>
+        <b>Dr. Arun Kumar Dwivedi</b>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="card heroMain">
+        <div class="kicker">
+          <span>🌦️</span> Meteorological Researcher <span>•</span> Research & Industry
+        </div>
+        <h1>Dr. Arun Kumar Dwivedi</h1>
+        <p class="subtitle">
+          Mid-level meteorological researcher bridging applied research and industry—focused on
+          data-driven atmospheric analysis, forecasting workflows, and decision support.
+        </p>
+
+        <div class="tags">
+          <div class="tag">Forecasting & Verification</div>
+          <div class="tag">Atmospheric Data Analysis</div>
+          <div class="tag">Climate / Weather Risk</div>
+          <div class="tag">Research → Production</div>
+        </div>
+
+        <div class="actions">
+          <!-- Replace # with your real links -->
+          <a class="btn primary" href="#contact">Contact <small>email / links</small></a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn <small>add link</small></a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Google Scholar <small>add link</small></a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub <small>add link</small></a>
+        </div>
+
+        <p class="note" style="margin-top:14px;">
+          Tip: You can host this free at <b>yourusername.github.io</b> (GitHub Pages).
+        </p>
+      </div>
+
+      <aside class="card side">
+        <h3>Quick Info</h3>
+        <div class="kv">
+          <div class="row"><span>Role</span><b>Meteorological Researcher</b></div>
+          <div class="row"><span>Focus</span><b>Research & Industry</b></div>
+          <div class="row"><span>Level</span><b>Mid-level</b></div>
+          <div class="row"><span>Location</span><b><!-- City, Country -->Add</b></div>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3>Highlights</h3>
+          <div class="pillrow">
+            <span class="pill">Forecast modeling</span>
+            <span class="pill">Data pipelines</span>
+            <span class="pill">Python/R</span>
+            <span class="pill">Remote sensing</span>
+            <span class="pill">Stakeholder reporting</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div id="about" class="card section col12">
+        <h2>About</h2>
+        <p>
+          I work at the intersection of meteorological research and industry, translating scientific methods
+          into reliable operational workflows. My interests include improving forecast skill, building
+          reproducible analysis pipelines, and supporting risk-aware decisions using atmospheric and climate data.
+        </p>
+        <p class="muted">
+          Replace this text with a 3–5 line summary of your specific expertise (e.g., monsoon, air quality,
+          extreme rainfall, wind energy, radar, satellites, NWP verification, etc.).
+        </p>
+      </div>
+
+      <div id="experience" class="card section col6">
+        <h2>Experience</h2>
+        <div class="list">
+          <div class="item">
+            <div class="top">
+              <b>Role Title — Organization</b>
+              <span class="meta">YYYY – Present</span>
+            </div>
+            <div class="meta">City, Country • Research/Industry</div>
+            <ul class="bullets">
+              <li>Owned end-to-end analysis for <i>[topic]</i> using <i>[datasets/models]</i>.</li>
+              <li>Improved <i>[metric]</i> by <i>[X%]</i> through validation and workflow upgrades.</li>
+              <li>Collaborated with <i>[teams/stakeholders]</i> to deliver actionable insights.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="top">
+              <b>Role Title — Organization</b>
+              <span class="meta">YYYY – YYYY</span>
+            </div>
+            <div class="meta">City, Country • Research/Industry</div>
+            <ul class="bullets">
+              <li>Developed methods for <i>[forecast/diagnostics]</i> and documented reproducible results.</li>
+              <li>Built dashboards/reports for <i>[users]</i> to support decisions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="projects" class="card section col6">
+        <h2>Selected Projects</h2>
+        <div class="list">
+          <div class="item">
+            <div class="top">
+              <b>Project Name</b>
+              <span class="meta">Tools: Python • xarray • GIS</span>
+            </div>
+            <ul class="bullets">
+              <li>What problem you solved (one line).</li>
+              <li>What you built/did (one line).</li>
+              <li>Impact/result (one line).</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="top">
+              <b>Project Name</b>
+              <span class="meta">Tools: WRF / ERA5 / Satellite</span>
+            </div>
+            <ul class="bullets">
+              <li>Short description of methods and outcome.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="publications" class="card section col6">
+        <h2>Publications</h2>
+        <p class="muted">Add 3–6 key papers. You can link titles to DOI or Scholar.</p>
+        <div class="list">
+          <div class="item">
+            <div class="top">
+              <b>Paper Title (Year)</b>
+              <span class="meta">Journal / Conference</span>
+            </div>
+            <div class="meta">Authors: A. K. Dwivedi, …</div>
+          </div>
+          <div class="item">
+            <div class="top">
+              <b>Paper Title (Year)</b>
+              <span class="meta">Journal / Conference</span>
+            </div>
+            <div class="meta">Authors: A. K. Dwivedi, …</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="skills" class="card section col6">
+        <h2>Skills</h2>
+        <div class="pillrow">
+          <span class="pill">Atmospheric science</span>
+          <span class="pill">Forecast verification</span>
+          <span class="pill">Python</span>
+          <span class="pill">R</span>
+          <span class="pill">GIS</span>
+          <span class="pill">NetCDF / GRIB</span>
+          <span class="pill">Remote sensing</span>
+          <span class="pill">Time series</span>
+          <span class="pill">Model evaluation</span>
+          <span class="pill">Technical writing</span>
+          <span class="pill">Stakeholder communication</span>
+        </div>
+        <p class="muted" style="margin-top:12px;">
+          Edit these to match your real tools (e.g., WRF, ECMWF/ERA5, GFS, CDO, NCO, xarray, MetPy, Cartopy, QGIS, etc.).
+        </p>
+      </div>
+
+      <div id="contact" class="card section col12">
+        <h2>Contact</h2>
+        <div class="list">
+          <div class="item">
+            <div class="top">
+              <b>Email</b>
+              <span class="meta"><a href="mailto:your.email@example.com">your.email@example.com</a></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="top">
+              <b>LinkedIn</b>
+              <span class="meta"><a href="#" target="_blank" rel="noreferrer">Add your LinkedIn URL</a></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="top">
+              <b>Google Scholar</b>
+              <span class="meta"><a href="#" target="_blank" rel="noreferrer">Add your Scholar profile URL</a></span>
+            </div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Optional: add ORCID, ResearchGate, GitHub, or a downloadable PDF CV link.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Dr. Arun Kumar Dwivedi • Built with HTML/CSS • Hosted free on GitHub Pages
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
